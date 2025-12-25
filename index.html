@@ -241,6 +241,27 @@
           font-size: 14px;
         }
       }
+
+      /* ★本体情報：文字は折り返さず、ボタン幅を文字に合わせて行送りで収める */
+      .bodyinfo-buttons {
+        justify-content: flex-start; /* 左詰め（好みでcenterでもOK） */
+      }
+      
+      .bodyinfo-buttons button {
+        flex: 0 0 auto;       /* 伸び縮みさせず、内容幅ベースにする */
+        width: auto;          /* 文字の長さに合わせて可変 */
+        min-width: 0;         /* 既存の min-width: 30% を無効化 */
+        white-space: nowrap;  /* 折り返さない */
+        padding: 10px 10px;   /* 少し余白調整（任意） */
+      }
+      
+      /* スマホで少しだけ文字を小さくして収まりやすく */
+      @media (max-width: 600px) {
+        .bodyinfo-buttons button {
+          font-size: 12px;
+          padding: 10px 8px;
+        }
+      }      
     </style>
   </head>
 
